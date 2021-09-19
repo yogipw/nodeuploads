@@ -42,7 +42,7 @@ app.post('/upload', (req, res) => {
           msg: 'Error: No File Selected!'
         });
       } else {
-        res.json({
+        res.render('index', {
           author: 'YogiPw', 
           msg: 'File Uploaded!',
           file: `https://nodeuploads.yogipw.repl.co/uploads/${req.file.filename}`
