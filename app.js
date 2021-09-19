@@ -44,7 +44,7 @@ app.post('/upload', (req, res) => {
       } else {
         res.json({
           msg: 'File Uploaded!',
-          file: `https://file-uploader-js/uploads/${req.file.filename}`
+          file: `https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`
         });
       }
     }
