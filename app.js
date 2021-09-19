@@ -1,3 +1,5 @@
+
+//Recode by YogiPw
 const express = require('express');
 const multer = require('multer');
 const ejs = require('ejs');
@@ -13,28 +15,9 @@ const storage = multer.diskStorage({
 
 // Init Upload
 const upload = multer({
-  storage: storage,
-  limits:{fileSize: 1000000},
-  fileFilter: function(req, file, cb){
-    checkFileType(file, cb);
-  }
-}).single('myImage');
+  storage: storage
+}).single('recfile');
 
-// Check File Type
-function checkFileType(file, cb){
-  // Allowed ext
-  const filetypes = /jpeg|jpg|png|gif/;
-  // Check ext
-  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
-  // Check mime
-  const mimetype = filetypes.test(file.mimetype);
-
-  if(mimetype && extname){
-    return cb(null,true);
-  } else {
-    cb('Error: Images Only!');
-  }
-}
 
 // Init app
 const app = express();
@@ -59,9 +42,10 @@ app.post('/upload', (req, res) => {
           msg: 'Error: No File Selected!'
         });
       } else {
-        res.render('index', {
+        res.json({
+          author: 'YogiPw', 
           msg: 'File Uploaded!',
-          file: `uploads/${req.file.filename}`
+          file: `https://file-uploader-yogipw/uploads/${req.file.filename}`
         });
       }
     }
