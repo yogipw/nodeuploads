@@ -42,9 +42,9 @@ app.post('/upload', (req, res) => {
           msg: 'Error: No File Selected!'
         });
       } else {
-        res.render('index', {
+        res.json({
           msg: 'File Uploaded!',
-          file: `/uploads/${req.file.filename}`
+          file: `https://file-uploader-js/uploads/${req.file.filename}`
         });
       }
     }
