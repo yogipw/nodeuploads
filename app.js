@@ -1,9 +1,11 @@
-
 //Recode by YogiPw
 const express = require('express');
 const multer = require('multer');
 const ejs = require('ejs');
 const path = require('path');
+
+BaseUrl = `https://nodeuploads-1.yogipw.repl.co/`
+LimitSize = 20 * 1024 * 1024 //20mb
 
 // Set The Storage Engine
 const storage = multer.diskStorage({
@@ -15,10 +17,12 @@ const storage = multer.diskStorage({
 
 // Init Upload
 const upload = multer({
-  storage: storage
+  storage: storage, 
+  limits:{fileSize: LimitSize}
 }).single('recfile');
 const upload2 = multer({
-  storage: storage
+  storage: storage, 
+  limits:{fileSize: LimitSize}
 }).array('recfiles', 5);
 
 
@@ -47,7 +51,7 @@ app.post('/upload', (req, res) => {
       } else {
         res.json({
           msg: 'File Uploaded!',
-          file: `https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`
+          file: BaseUrl + req.file.filename
         });
       }
     }
@@ -66,11 +70,17 @@ Hehe = []
           msg2: 'Error: No File Selected!'
         });
       } else {
-Hehe.push(req.files) 
-       
-      }
-res.json(Hehe.filename) 
-    }
+        let x = req.files
+        x.map(async adm => {
+Hehe.push(BaseUrl + adm.filename) 
+          
+}) 
+        res.json({
+          msg: 'File Uploaded!',
+          file: Hehe
+})
+      } 
+  }
   });
 });
 
