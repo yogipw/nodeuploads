@@ -60,14 +60,14 @@ app.post('/upload2', (req, res) => {
         msg2: err
       });
 } else {
-      if(req.file == undefined){
+      if(req.files == undefined){
         res.render('index', {
           msg2: 'Error: No File Selected!'
         });
       } else {
 hehe = [] 
-//hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`) 
-        res.send(req.body);
+hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`) 
+        res.send(hehe);
       }
     }
   });
