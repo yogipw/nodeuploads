@@ -59,12 +59,17 @@ app.post('/upload2', (req, res) => {
       res.render('index', {
         msg2: err
       });
+} else {
+      if(req.file == undefined){
+        res.render('index', {
+          msg: 'Error: No File Selected!'
+        });
       } else {
 hehe = [] 
 //hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`) 
         res.send(req.body);
       }
-    
+    }
   });
 });
 
