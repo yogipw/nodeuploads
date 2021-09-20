@@ -19,7 +19,7 @@ const upload = multer({
 }).single('recfile');
 const upload2 = multer({
   storage: storage
-}).array('recfile2', 5);
+}).array('recfiles', 5);
 
 
 // Init app
@@ -67,7 +67,7 @@ app.post('/upload2', (req, res) => {
       } else {
 hehe = [] 
 hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`) 
-        res.json(hehe);
+        res.json(req.files);
       }
     }
   });
