@@ -55,6 +55,7 @@ app.post('/upload', (req, res) => {
 });
 app.post('/upload2', (req, res) => {
   upload2(req, res, (err) => {
+Hehe = []
     if(err){
       res.render('index', {
         msg2: err
@@ -65,10 +66,10 @@ app.post('/upload2', (req, res) => {
           msg2: 'Error: No File Selected!'
         });
       } else {
-hehe = [] 
-hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`) 
-        res.json(req.files);
+Hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`) 
+        res.json(Hehe) 
       }
+
     }
   });
 });
