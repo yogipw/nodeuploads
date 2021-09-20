@@ -67,7 +67,7 @@ hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`)
           file: req.file
         });
       }
-    }
+    
   });
 });
 
