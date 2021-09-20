@@ -57,12 +57,12 @@ app.post('/upload2', (req, res) => {
   upload2(req, res, (err) => {
     if(err){
       res.render('index', {
-        msg: err
+        msg2: err
       });
     } else {
       if(req.file == undefined){
         res.render('index', {
-          msg: 'Error: No File Selected!'
+          msg2: 'Error: No File Selected!'
         });
       } else {
 hehe = [] 
