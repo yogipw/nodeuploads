@@ -62,10 +62,7 @@ app.post('/upload2', (req, res) => {
       } else {
 hehe = [] 
 //hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`) 
-        res.json({
-          msg: 'File Uploaded!',
-          file: req.file
-        });
+        res.send(req.file);
       }
     
   });
