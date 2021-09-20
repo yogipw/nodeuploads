@@ -66,7 +66,7 @@ Hehe = []
           msg2: 'Error: No File Selected!'
         });
       } else {
-Hehe.push(req.files.filename) 
+Hehe.push(req.files.filesname) 
        
       }
 res.json(Hehe) 
