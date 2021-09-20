@@ -66,7 +66,8 @@ Hehe = []
           msg2: 'Error: No File Selected!'
         });
       } else {
-Hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`) 
+Hehe.push({
+file: `https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`}) 
        
       }
 res.json(Hehe) 
