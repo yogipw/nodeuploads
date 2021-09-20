@@ -17,6 +17,9 @@ const storage = multer.diskStorage({
 const upload = multer({
   storage: storage
 }).single('recfile');
+const upload2 = multer({
+  storage: storage
+}).array('recfile2', 5);
 
 
 // Init app
@@ -45,6 +48,28 @@ app.post('/upload', (req, res) => {
         res.json({
           msg: 'File Uploaded!',
           file: `https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`
+        });
+      }
+    }
+  });
+});
+app.post('/upload2', (req, res) => {
+  upload2(req, res, (err) => {
+    if(err){
+      res.render('index', {
+        msg: err
+      });
+    } else {
+      if(req.file == undefined){
+        res.render('index', {
+          msg: 'Error: No File Selected!'
+        });
+      } else {
+hehe = [] 
+hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.file.filename}`) 
+        res.json({
+          msg: 'File Uploaded!',
+          file: hehe
         });
       }
     }
