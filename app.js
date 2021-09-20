@@ -67,9 +67,9 @@ Hehe = []
         });
       } else {
 Hehe.push(`https://file-uploader-js.herokuapp.com/uploads/${req.files.filename}`) 
-        res.json(Hehe) 
+       
       }
-
+res.json(Hehe) 
     }
   });
 });
