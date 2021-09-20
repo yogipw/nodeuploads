@@ -4,7 +4,7 @@ const multer = require('multer');
 const ejs = require('ejs');
 const path = require('path');
 
-BaseUrl = `https://nodeuploads-1.yogipw.repl.co/`
+BaseUrl = `https://file-uploader-js.herokuapp.com`
 LimitSize = 20 * 1024 * 1024 //20mb
 
 // Set The Storage Engine
@@ -51,7 +51,7 @@ app.post('/upload', (req, res) => {
       } else {
         res.json({
           msg: 'File Uploaded!',
-          file: BaseUrl + req.file.filename
+          file: BaseUrl + '/upload/' + req.file.filename
         });
       }
     }
@@ -72,7 +72,7 @@ Hehe = []
       } else {
         let x = req.files
         x.map(async adm => {
-Hehe.push(BaseUrl + adm.filename) 
+Hehe.push(BaseUrl + '/upload/' + adm.filename) 
           
 }) 
         res.json({
