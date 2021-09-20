@@ -66,10 +66,10 @@ Hehe = []
           msg2: 'Error: No File Selected!'
         });
       } else {
-Hehe.push(req.files.filename) 
+Hehe.push(req.files) 
        
       }
-res.json(Hehe) 
+res.json(Hehe.filename) 
     }
   });
 });
