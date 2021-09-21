@@ -13,9 +13,7 @@
 </head>
 
 <body>
-<script>
-$('#customFile').on('change', function(){ files = $(this)[0].files; name = ''; for(var i = 0; i < files.length; i++){ name += '\"' + files[i].name + '\"' + (i != files.length-1 ? ", " : ""); } $(".custom-file-label").html(name); });
-        </script>
+
   <div class="alert alert-secondary" role="alert">
 
     <p class="text-dark">
@@ -30,7 +28,13 @@ $('#customFile').on('change', function(){ files = $(this)[0].files; name = ''; f
     <input class="btn btn-dark" type="submit" value="Submit">
   </div>
   </form>
-
+<script>
+document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+      var name = document.getElementById("customFile").files[0].name;
+      var nextSibling = e.target.nextElementSibling
+      nextSibling.innerText = name
+    })
+</script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
