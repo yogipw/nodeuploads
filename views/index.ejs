@@ -28,16 +28,17 @@
     <input class="btn btn-dark" type="submit" value="Submit">
   </div>
   </form>
+<hr>
 <div class="alert alert-secondary" role="alert">
 
     <p class="text-dark">
-      Single upload
+      Multiple upload
     </p>
     <form action="/upload2" method="POST" enctype="multipart/form-data">
         <%= typeof msg != 'undefined' ? msg : '' %>
     <div class="custom-file">
-      <input type="file" multiple class="custom-file-input" id="customFile" name="recfiles">
-      <label class="custom-file-label" for="customFile"></label>
+      <input type="file" multiple class="custom-file-input" id="customFiles" name="recfiles">
+      <label class="custom-file-label" for="customFiles"></label>
     </div>
     <input class="btn btn-dark" type="submit" value="Submit">
   </div>
@@ -45,6 +46,11 @@
 <script>
 document.querySelector('.custom-file-input').addEventListener('change', function (e) {
       var name = document.getElementById("customFile").files[0].name;
+      var nextSibling = e.target.nextElementSibling
+      nextSibling.innerText = name
+    })
+document.querySelector('.custom-file-input').addEventListener('change', function (e) {
+      var name = document.getElementById("customFiles").files[0].name;
       var nextSibling = e.target.nextElementSibling
       nextSibling.innerText = name
     })
