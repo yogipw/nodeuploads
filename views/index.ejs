@@ -1,59 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <title>Node File Uploads</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <title>File Uploader</title>
 </head>
+
 <body>
-  <div class="container">
-    <h3>File Upload</h3>
-    <%= typeof msg != 'undefined' ? msg : '' %>
+
+  <div class="alert alert-secondary" role="alert">
+
+    <p class="text-dark">
+      Single upload
+    </p>
     <form action="/upload" method="POST" enctype="multipart/form-data">
-      <div class="file-field input-field">
-        <div class="btn grey">
-          <span>File</span>
-          <input name="recfile" type="file">
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">cloud_upload</i>
-  </button>
-</form>
-    <br>
-    <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
+    <%= typeof msg != 'undefined' ? msg : '' %>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input" name="recfile">
+      <label class="custom-file-label" for="recfile">Choose file</label>
+    </div>
+    <input class="btn btn-dark" type="submit" value="Submit">
   </div>
-<br>
-<div class="container">
-    <h3>File Upload (Multiple File)</h3>
-    <%= typeof msg2 != 'undefined' ? msg2 : '' %>
-    <form action="/upload2" method="POST" enctype="multipart/form-data">
-      <div class="file-field input-field">
-        <div class="btn grey">
-          <span>File</span>
-          <input type="file" name="recfiles" multiple/>
-        </div>
-        <div class="file-path-wrapper">
-          <input class="file-path validate" type="text">
-        </div>
-      </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">cloud_upload</i>
-  </button>
-</form>
-    <br>
-    <img src="<%= typeof file != 'undefined' ? file : '' %>" class="responsive-img">
-  </div>
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>  
+  </form>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+
 </body>
+
 </html>
