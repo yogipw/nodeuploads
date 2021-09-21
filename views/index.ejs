@@ -13,7 +13,9 @@
 </head>
 
 <body>
-
+<script>
+$('#customFile').on('change', function(){ files = $(this)[0].files; name = ''; for(var i = 0; i < files.length; i++){ name += '\"' + files[i].name + '\"' + (i != files.length-1 ? ", " : ""); } $(".custom-file-label").html(name); });
+        </script>
   <div class="alert alert-secondary" role="alert">
 
     <p class="text-dark">
@@ -23,14 +25,12 @@
         <%= typeof msg != 'undefined' ? msg : '' %>
     <div class="custom-file">
       <input type="file" class="custom-file-input" id="customFile" name="recfile">
-      <label class="custom-file-label" for="customFile">Choose file</label>
+      <label class="custom-file-label" for="customFile"></label>
     </div>
     <input class="btn btn-dark" type="submit" value="Submit">
   </div>
   </form>
-<script>
-$('#customFile').on('change', function(){ files = $(this)[0].files; name = ''; for(var i = 0; i < files.length; i++){ name += '\"' + files[i].name + '\"' + (i != files.length-1 ? ", " : ""); } $(".custom-file-label").html(name); });
-        </script>
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
