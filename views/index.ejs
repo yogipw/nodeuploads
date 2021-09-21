@@ -20,7 +20,9 @@
       Single upload
     </p>
     <form action="/upload" method="POST" enctype="multipart/form-data">
-    <%= typeof msg != 'undefined' ? msg : '' %>
+    <% if(msg!= 'undefined) 
+alert(msg);
+%>  
     <div class="custom-file">
       <input type="file" class="custom-file-input" name="recfile">
       <label class="custom-file-label" for="recfile">Choose file</label>
