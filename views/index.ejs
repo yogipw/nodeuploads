@@ -29,12 +29,9 @@
   </div>
   </form>
 <script>
-            $('#recfile').on('change',function(){
-                //get the file name
-                var fileName = $(this).val();
-                //replace the "Choose a file" label
-                $(this).next('.custom-file-label').html(fileName);
-            })
+$(document).on('change', '.custom-file-input', function (event) {
+    $(this).next('.custom-file-label').html(event.target.files[0].name);
+})
         </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
