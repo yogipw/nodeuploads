@@ -51,7 +51,7 @@ app.post('/upload', (req, res) => {
       } else {
         res.json({
           msg: 'File Uploaded!',
-          file: BaseUrl + '/uploads/' + req.file.filename
+          file: https://" + req.hostname '/uploads/' + req.file.filename
         });
       }
     }
@@ -72,12 +72,12 @@ Hehe = []
       } else {
         let x = req.files
         x.map(async adm => {
-Hehe.push(BaseUrl + '/uploads/' + adm.filename) 
-          
-}) 
-        res.json({
+Hehe.push(https://" + req.hostname + '/uploads/' + adm.filename) 
+          res.json({
           msg: 'File Uploaded!',
           file: Hehe
+}) 
+        
 })
       } 
   }
