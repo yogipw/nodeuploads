@@ -21,23 +21,27 @@
 <center><h4>FILE UPLOADER</h4></center>
     <div class="alert alert-dark" role="alert">
  <center><hr3>Single File</hr3></center>
+<form action="/upload" method="POST" enctype="multipart/form-data">
 <div class="input-group">
-    <form action="/upload" method="POST" enctype="multipart/form-data">
+    
         <%= typeof msg != 'undefined' ? msg : '' %>
   <input type="file" class="form-control" name="recfile" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
   <button class="btn btn-outline-secondary" type="submit" value="submit" id="inputGroupFileAddon04">Submit</button>
-</form>
+
 </div>
+</form>
 </div>
 <div class="alert alert-dark" role="alert">
  <center><hr3>Multiple File</hr3></center>
+<form action="/upload2" method="POST" enctype="multipart/form-data">
 <div class="input-group">
-  <form action="/upload2" method="POST" enctype="multipart/form-data">
-        <%= typeof msg != 'undefined' ? msg : '' %>
-  <input type="file" multiple class="form-control" name="recfiles" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+    
+        <%= typeof msg2 != 'undefined' ? msg2 : '' %>
+  <input type="file" class="form-control" name="recfiles" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
   <button class="btn btn-outline-secondary" type="submit" value="submit" id="inputGroupFileAddon04">Submit</button>
-</form>
+
 </div>
+</form>
 </div>
 
 <center><button type="button" href="#" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
