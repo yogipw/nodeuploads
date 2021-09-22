@@ -73,12 +73,13 @@ Hehe = []
         let x = req.files
         x.map(async adm => {
 Hehe.push('https://' + req.hostname + '/uploads/' + adm.filename) 
-          res.json({
+          
+        
+})
+res.json({
           msg: 'File Uploaded!',
           file: Hehe
 }) 
-        
-})
       } 
   }
   });
