@@ -82,7 +82,7 @@ app.post('/upload2', (req, res) => {
               encoding: v.encoding,
               mimetype: v.mimetype,
               size: v.size,
-              url: "https://" + req.hostname + "/uploads/" + v.filename"
+              url: "https://" + req.hostname + "/uploads/" + "v.filename"
             })
             res.json({
               msg: 'File Uploaded!',
