@@ -88,8 +88,8 @@ app.post('/upload2', (req, res) => {
               msg: 'File Uploaded!',
               file: Hehe
             })
-          }
-
+          }) 
+}
           
         });
     });
