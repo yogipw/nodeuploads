@@ -84,12 +84,12 @@ app.post('/upload2', (req, res) => {
               size: v.size,
               url: "https://" + req.hostname + "/uploads/" + "v.filename"
             })
-            
-          }
-res.json({
+            res.json({
               msg: 'File Uploaded!',
               file: Hehe
             })
+          }
+
           
         });
     });
