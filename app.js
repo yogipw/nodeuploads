@@ -90,7 +90,7 @@ res.json({
               msg: 'File Uploaded!',
               file: Hehe
             })
-          }) 
+          
         });
     });
 
